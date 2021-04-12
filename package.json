@@ -4,7 +4,9 @@
   "description": "Backend of RLP-project",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node ./src/app.js"
+    "dev": "nodemon --exec babel-node ./src/app.js",
+    "build": "babel src --out-dir dist --source-maps inline --copy-files",
+    "start":"npm run build && node --require @babel/polyfill ./dist/app.js"
   },
   "repository": {
     "type": "git",
